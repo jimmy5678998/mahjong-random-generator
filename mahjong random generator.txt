@@ -1,0 +1,177 @@
+Mahjong random generator(japanese)
+----------------------------------------
+Explanations:
+- = characteristic explaning
+* = optional, not a must to add
+$ = the record of seeking help from others
+@ = people recorded for helping me
+! = on going project
+^ = finished
+& = cancelled or give up
+----------------------------------------
+Modes: 
+0.1 showing doras
+-normal doras
+-red doras
+
+0.2 other players hand are counted(3~4people)(optional, can choose 1 people mode)
+-giving tiles to other player in random order(cannot limit their shanten)
+
+1.randomly generating your hand
+-ask how far you reach to tenpai(shanten questions)
+*ask which discard will be the best to reach tenpai(how many tiles avaliable for you)
+
+2.Tenpai limited and generate hand(chinitsu limited)(one-people mahjong)
+-ask which discard will be the best to tenpai
+-all tenpai discards will show how many tiles are actually avaliable for ron
+
+3.1-shanten limited hand generate (maybe 2-shanten also avaliable)
+-which discard will be the best to reach tenpai
+-all discard options show how many tiles avaliable and shanten to reach tenpai(optional to show)
+-chinitsu mode avaliable(1 people mahjong)
+
+4.Hand expected value
+-showing the value of the hand in different rounds
+(higher value stands for higher winning-the-game rate, but it is not a must, and it is only for reference)
+
+5. 3 people mahjong mode
+-the above characteristics but in 3 people mode
+
+6.yaku, han, fu and points counting*
+-deciding the value of the hand(tenpai)
+-giving out possible yaku and value of hand from each discard and effective tsumo tile
+
+7.practicing calling tile mode*
+-giving a hand that randomly(mostly with complex shape) and a tile from random player(mostly your upper player),choosing chi, pon, or not do anything
+-giving the possible outcome of effective tiles after each action, and maybe able to compare with other possible actions
+
+8.AI playing mode*
+-impossible
+----------------------------------------
+Idea on each modes:
+0.1
+
+0.2
+
+1.
+
+2.
+
+3.
+
+4.
+
+5.
+
+6.
+----------------------------------------
+General game content:
+1. generate random hands
+-each hand has 14 tiles(13 if tsumo tile is discarded)
+-every tile type has 4 tiles(1111,2222...)
+-each tile colour has 9 types(1~9)
+-3 types of colour(pinzi for p, souzi for s, manzi for m,), and 1 special type for honor tile(wind tile and dragon tile)(east,south,west,north, haku, hatsu, chun)
+-random.randint(1,144) for in random(no repeat)
+-each number is specific to correspond index to tile number
+
+2. generate mountain(with the unused tiles)
+-last 14 tiles of the mountain are unused
+-the last 10th tile(list[9] in unused tiles list) need to show to player as dora
+*if kan, the last tile of useable tile mountain need to move to unused tile(increased to 15 tiles)
+*4 kan causes the game end immediately(if not tsumo)(18 unused tiles at most)
+-split two list, one is useable mountain, second is unusable, no repeat number is allowed
+
+3.red dora function
+-if index 1~9 correspond to normal tile, 0 will correspond to the special red dora
+-red dora will replace the orginal index 5 tile(for one tile only)(each type has one red dora)
+
+4.defining shanten
+-how to set how far from tenpai(the algorthim to counting shanten)
+-effective combination of tiles(e.g. 23p calling for 1,4p, 24p calling for 3p)
+-extra help for building up combination(eg. 24p with 5p added, so it has one more effective tile call(36p instead of 3p only)
+
+5.yaku counting?*
+-counting yaku avaliable for tenpai and 1-shanten
+-need to make rules for effective yaku(e.g. defining function for each one)
+
+6.fu counting?*
+-counting fu avaliable for tenpai
+-need to make rules for effective fu
+
+7.calling tile*
+-adding characteristic of calliing tile(chi,pon,open kan, closed kan, ron, tsumo)
+
+8.multiplayer mode*
+-Hmmm...
+
+9.able to play with AI*
+-impossible
+----------------------------------------
+Problems encountered(notes):
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+----------------------------------------
+Solution(notes):
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+----------------------------------------
+notes:
+tenhou.net program
+112334m77p114556s
+打5s 摸[1m2m5m7p1s 13枚]
+- m=萬子, p=筒子, s=索子, z=字牌, 0=赤
+- 一般形=４面子１雀頭 / 標準形=一般形＋七対形＋国士形
+- ツモはその時点で使用していない牌をランダムに選択します
+- 有効牌をクリックすると打牌後にその牌をツモ牌として表示します
+- (n*3+2)枚で開始：(n*3+2)枚目をツモ牌として表示
+- (n*3+1)枚で開始：ツモはページのロード時に毎回変化
+- 和了役の判定はありません
+- 暗槓はできません
+
+
+
+
+
+
+
+
+
+
+
+----------------------------------------
+written by jimmy5678998

@@ -82,11 +82,29 @@ def print_dora_indicator(unused_mountain):
     return dora_indicator
 
 
-def dora():
+def dora(dora_indicator):
     """This function is to show dora and make dora useful"""
     # all tiles list is used to show how the tiles arrange and how dora indicator works to show dora
-    all_tiles = [['1p', '2p', '3p', '4p', '5p', '6p', '7p', '8p', '9p'], ['1s', '2s', '3s', '4s', '5s', '6s', '7s', '8s', '9s'], ['1m', '2m', '3m', '4m', '5m', '6m', '7m', '8m', '9m'], ['1z', '2z', '3z', '4z'], ['5z', '6z', '7z']]
+    dora_all_tiles = [['1p', '2p', '3p', '4p', '5p', '6p', '7p', '8p', '9p', '1p'],
+                      ['1s', '2s', '3s', '4s', '5s', '6s', '7s', '8s', '9s', '1s'],
+                      ['1m', '2m', '3m', '4m', '5m', '6m', '7m', '8m', '9m', '1m'],
+                      ['1z', '2z', '3z', '4z', '1z'],
+                      ['5z', '6z', '7z', '5z']]
+    # using index_2d function to get the indices of dora
+    count, dora_indicating = index_2d(dora_all_tiles, dora_indicator)
+    dora = dora_all_tiles[count][dora_indicating + 1]
+    print("Dora: ", dora)
+    return dora
+
+def index_2d(mylist, indicator):
+    for count, lists in enumerate(mylist):
+        if indicator in lists:
+            return count, lists.index(indicator)
+
+def getting_tiles():
+    
 
 
 if __name__ == "__main__":
-    build_mountain()
+    mountain, finished_mountain, unused_mountain, dora_indicator = build_mountain()
+    dora = dora(dora_indicator)

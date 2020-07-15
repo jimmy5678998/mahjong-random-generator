@@ -96,15 +96,63 @@ def dora(dora_indicator):
     print("Dora: ", dora)
     return dora
 
+
 def index_2d(mylist, indicator):
+    """This function is from stackoverflow, and it is used to get items indices from a 2d list"""
     for count, lists in enumerate(mylist):
         if indicator in lists:
             return count, lists.index(indicator)
 
-def getting_tiles():
-    
+
+def get_starting_hand():
+    """This function is used to get the tiles for starting hand"""
+    # get first 14 tiles from finished_mountain
+    starting_hand = []
+    for i in range(0, 14):
+        starting_hand.append(finished_mountain.pop(0))
+    ## print(starting_hand)
+    ## print(finished_mountain)
+    true_starting_hand = sort_tiles(starting_hand)
+    print("Starting hands: ", true_starting_hand)
+    return true_starting_hand
 
 
+def sort_tiles(hand):
+    """This function is used to sort the tiles"""
+    # sort tiles by m,p,s,z
+    hand.sort(key = lambda item: (list(item)[1], list(item)[0]))
+    ## print(starting_hand)
+    # making the arranged starting hand tidy, becoming a format of "123m456p789s11177z"
+    # join the separated strings first
+    hand = "".join(hand)
+    # idea: while not count(s)==1, strip(s)> replace now
+    # repeat for four type of tiles
+    while not hand.count("m") <= 1:
+        hand = hand.replace("m", "", hand.count("m") - 1)
+    while not hand.count("p") <= 1:
+        hand = hand.replace("p", "", hand.count("p") - 1)
+    while not hand.count("s") <= 1:
+        hand = hand.replace("s", "", hand.count("s") - 1)
+    while not hand.count("z") <= 1:
+        hand = hand.replace("z", "", hand.count("z") - 1)
+    ## print(hand)
+    return hand
+
+
+def counting_shantan():
+
+
+def gamemode_explanation():
+    """This function is used for explaining details of different gamemode,
+    and exact things you need to do when you play"""
+
+
+def gamemode():
+    """This function is used for player to choose the gamemode that they want"""
+
+
+# main function
 if __name__ == "__main__":
     mountain, finished_mountain, unused_mountain, dora_indicator = build_mountain()
     dora = dora(dora_indicator)
+    starting_hand = get_starting_hand()

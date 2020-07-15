@@ -68,12 +68,12 @@ Idea on each modes:
 ----------------------------------------
 General game content:
 1. generate random hands
--each hand has 14 tiles(13 if tsumo tile is discarded)
--every tile type has 4 tiles(1111,2222...)
--each tile colour has 9 types(1~9)
--3 types of colour(pinzi for p, souzi for s, manzi for m,), and 1 special type for honor tile(wind tile and dragon tile)(east,south,west,north, haku, hatsu, chun)
--random.randint(1,144) for in random(no repeat)
--each number is specific to correspond index to tile number
+-each hand has 14 tiles^(13 if tsumo tile is discarded)
+-every tile type has 4 tiles(1111,2222...)^
+-each tile colour has 9 types(1~9)^
+-3 types of colour(pinzi for p, souzi for s, manzi for m,), and 1 special type for honor tile(wind tile and dragon tile)(east,south,west,north, haku, hatsu, chun)^
+-random.randint(1,136) for in random(no repeat)^
+-each number is specific to correspond index to tile number^
 
 2. generate mountain^(with the unused tiles)^
 -last 14 tiles of the mountain are unused^
@@ -108,6 +108,10 @@ General game content:
 
 9.able to play with AI*
 -impossible
+
+10.choosing gamemode and explanations
+-To explain how the gamemode work and with game explanations.
+-Gamemode are adjusted to 1player,2player,3player,4player mode, depends on which function you want to use.
 ----------------------------------------
 Problems encountered(notes):
 1. the tiles clarification:

@@ -1,4 +1,5 @@
 import random
+## = function used to debug
 
 
 def build_mountain():
@@ -15,19 +16,26 @@ def build_mountain():
 
     # make a tile list that contain all of 4 types of tiles
     tile_list = [pinzi_list + souzi_list + manzi_list + honor_tile_list]
-    print(tile_list)
+    ## print(tile_list)
     # building up the mountain list randomly with the numbers in tile list by the below method
-    # random to choose 1 out of 4 list(not popping out) -> random to choose any tile in the list by using pop[]
+    # choosing the list inside tile_list(I don't know how to remove extra list)
+    # -> random to choose any tile in the list by using pop[]
     # for loop/ while loop until the lists are empty
     while not tile_list == [[]]:
-        c = random.randint(0, len(tile_list[0][0]) - 1)
         list_in_tile_list = tile_list[0]
+        c = random.randint(0, len(list_in_tile_list) - 1)
         tile_pop = list_in_tile_list.pop(c)
         mountain.append(tile_pop)
-        print(list_in_tile_list)
-    # return the mountain out
-    print(mountain)
-    return mountain
+    ## print(mountain)
+
+    # defining mountains with unfinished state, finished state and unused state
+    unfinished_mountain = mountain
+    finished_mountain, unused_mountain = slice_mountain(unfinished_mountain)
+    ## print(finished_mountain)
+    ## print(unused_mountain)
+    dora_indicator = print_dora_indicator(unused_mountain)
+    # return the mountains output
+    return mountain, finished_mountain, unused_mountain, dora_indicator
 
 
 def build_another_mountain():
@@ -40,6 +48,12 @@ def build_another_mountain():
 
         # limiting tiles to 28 times(1~7), 21 times(8~9)
         mountain.append(tiles)
+
+
+def slice_mountain(unfinished_mountain):
+    finished_mountain = unfinished_mountain[0:120]
+    unused_mountain = unfinished_mountain[121:135]
+    return finished_mountain, unused_mountain
 
 
 def mahjong_type_tiles(pinzi_list, souzi_list, manzi_list, honor_tile_list):
@@ -60,6 +74,19 @@ def mahjong_type_tiles(pinzi_list, souzi_list, manzi_list, honor_tile_list):
     return pinzi_list, souzi_list, manzi_list, honor_tile_list
 
 
+def print_dora_indicator(unused_mountain):
+    """This function is to define the dora indicator, works with dora() function"""
 
-build_mountain()
-# build_another_mountain()
+    print("The dora indicator is:", unused_mountain[8])
+    dora_indicator = unused_mountain[8]
+    return dora_indicator
+
+
+def dora():
+    """This function is to show dora and make dora useful"""
+    # all tiles list is used to show how the tiles arrange and how dora indicator works to show dora
+    all_tiles = [['1p', '2p', '3p', '4p', '5p', '6p', '7p', '8p', '9p'], ['1s', '2s', '3s', '4s', '5s', '6s', '7s', '8s', '9s'], ['1m', '2m', '3m', '4m', '5m', '6m', '7m', '8m', '9m'], ['1z', '2z', '3z', '4z'], ['5z', '6z', '7z']]
+
+
+if __name__ == "__main__":
+    build_mountain()

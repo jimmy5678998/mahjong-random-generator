@@ -8,6 +8,7 @@ $ = the record of seeking help from others
 ! = on going project
 ^ = finished
 & = cancelled or give up
+## = function used to debug(in .py file)
 ----------------------------------------
 Modes: 
 0.1 showing doras
@@ -74,9 +75,9 @@ General game content:
 -random.randint(1,144) for in random(no repeat)
 -each number is specific to correspond index to tile number
 
-2. generate mountain(with the unused tiles)
--last 14 tiles of the mountain are unused
--the last 10th tile(list[9] in unused tiles list) need to show to player as dora indicator, so that the next index will be dora(e.g. if index 5, souzi is dora indicator, index 6, souzi will be the dora)
+2. generate mountain^(with the unused tiles)^
+-last 14 tiles of the mountain are unused^
+-the last 10th tile(list[9] in unused tiles list) need to show to player as dora indicator, so that the next index will be dora(e.g. if index 5, souzi is dora indicator, index 6, souzi will be the dora)!
 *if kan, the last tile of useable tile mountain need to move to unused tile(increased to 15 tiles)
 *4 kan causes the game end immediately(if not tsumo)(18 unused tiles at most)
 -split two list, one is useable mountain, second is unusable, no repeat number is allowed

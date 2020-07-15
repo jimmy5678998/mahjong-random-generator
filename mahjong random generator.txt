@@ -108,6 +108,8 @@ General game content:
 -impossible
 ----------------------------------------
 Problems encountered(notes):
+1. the tiles clarification:
+-after generating numbers, have to defined them to m,s,p,or h
 
 
 

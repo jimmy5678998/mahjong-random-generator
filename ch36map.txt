@@ -1,0 +1,44 @@
+Title: Hong Kong Apocalypse 2020
+Content: In 2019, Hong Kong had been damaged by different political movements and the act of government. No people can escape from this. Innocents needed to say "goodbye" to their peaceful life and good old days. The war between yellow and blue was heating up, and had no vision to stop. While in the start of 2020, coronavirus outbreak in Wuhan, China. This Wuhan virus spread quickly to different country on the Earth, causing numerous deaths and great economic loss. Hong Kong has no exception. Yellow suffers great under the attack of virus, and the fighting will seems to shrink a bit, they are finding the target together and on the way to achieve the goal- fuck the government and CCP. Still, in this situation, blue and government seems to be planning some terrible things...
+
+
+
+
+--------------------------------------------
+Workflow:
+intro:print("title"),print("description")
+gameplay explain:
+Start the game:
+loops:
+some important choice that will increment the counter to (disaster/death/savior etc.):
+great event 1:
+loops:
+great event 2:
+great event 3:
+The fight of the end:
+Ending:
+Maker list:
+replay option:
+--------------------------------------------
+detail map option:
+
+
+
+
+--------------------------------------------
+
+
+
+
+
+
+
+--------------------------------------------
+
+
+
+
+
+
+--------------------------------------------
+make by jimmy5678998

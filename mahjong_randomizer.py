@@ -26,16 +26,16 @@ def build_mountain():
         c = random.randint(0, len(list_in_tile_list) - 1)
         tile_pop = list_in_tile_list.pop(c)
         mountain.append(tile_pop)
-    ## print(mountain)
+    print(mountain)
 
     # defining mountains with unfinished state, finished state and unused state
     unfinished_mountain = mountain
-    finished_mountain, unused_mountain = slice_mountain(unfinished_mountain)
+    finished_mountain, dead_wall = slice_mountain(unfinished_mountain)
     ## print(finished_mountain)
-    ## print(unused_mountain)
-    dora_indicator = print_dora_indicator(unused_mountain)
+    ## print(dead_wall)
+    dora_indicator = print_dora_indicator(dead_wall)
     # return the mountains output
-    return mountain, finished_mountain, unused_mountain, dora_indicator
+    return mountain, finished_mountain, dead_wall, dora_indicator
 
 
 def build_another_mountain():
@@ -52,8 +52,8 @@ def build_another_mountain():
 
 def slice_mountain(unfinished_mountain):
     finished_mountain = unfinished_mountain[0:120]
-    unused_mountain = unfinished_mountain[121:135]
-    return finished_mountain, unused_mountain
+    dead_wall = unfinished_mountain[121:135]
+    return finished_mountain, dead_wall
 
 
 def mahjong_type_tiles(pinzi_list, souzi_list, manzi_list, honor_tile_list):
@@ -138,8 +138,28 @@ def sort_tiles(hand):
     ## print(hand)
     return hand
 
+def mahjong_logic():
+    """This function is used to define the basic logic of mahjong combinations, like what is a winning hand is like"""
 
-def counting_shantan():
+
+def ready_hand():
+    """This function is used to"""
+    #
+
+
+def effective_pairs():
+    """This function is used to distinguish """
+    #
+
+
+def effective_tiles():
+    """This function is used to distinguish which tile is effective to shanten"""
+    #
+
+
+def counting_shanten():
+    """This function is used to counting shanten, meaning how far(how many tiles at least are needed) to reach tenpai"""
+    # logic of counting shantan
 
 
 def gamemode_explanation():
